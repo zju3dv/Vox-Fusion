@@ -1,0 +1,21 @@
+base_config: configs/replica/replica.yaml
+
+exp_name: replica/room0
+
+# seeding: 42
+enable_vis: False
+hard_realtime: False
+
+data_specs:
+  data_path: '/mnt/dataset2/nice-slam/room0'
+  max_depth: 10
+
+tracker_specs:
+  start_frame: 0
+  end_frame: 100
+
+# debug_args:
+#   save_data_freq: 1
+#   mesh_freq: 0
+#   render_freq: 50
+#   render_res: [200, 160]

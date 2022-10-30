@@ -1,0 +1,7 @@
+base_config: configs/arkit/arkit.yaml
+exp_name: arkit/home
+
+data_specs:
+  data_path: '/mnt/dataset2/ArkitRGBD/home3'
+  max_depth: 10
+  vertical: false

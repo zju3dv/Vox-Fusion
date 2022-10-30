@@ -1,0 +1,31 @@
+base_config: configs/replica/replica.yaml
+
+exp_name: replica/office0
+
+# seeding: 42
+enable_vis: False
+hard_realtime: False
+
+data_specs:
+  data_path: '/mnt/nas_8/datasets/voxslam/Replica/office0'
+  max_depth: 10
+
+criteria:
+  rgb_weight: 1
+
+tracker_specs:
+  N_rays: 1024
+  # step_size: 0.01
+  # learning_rate: 0.01
+  # start_frame: 1099
+  # end_frame: 1799
+
+mapper_specs:
+  voxel_size: 0.2
+  # step_size: 0.01
+
+debug_args:
+  verbose: false
+  save_data: false
+  render_freq: 50
+  render_res: [200, 160]

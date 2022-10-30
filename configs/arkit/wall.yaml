@@ -1,0 +1,7 @@
+base_config: configs/arkit/arkit.yaml
+exp_name: arkit/wall
+
+data_specs:
+  data_path: '/mnt/dataset2/ArkitRGBD/wall2'
+  max_depth: 10
+  vertical: true

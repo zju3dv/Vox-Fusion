@@ -1,0 +1,11 @@
+base_config: configs/replica/replica.yaml
+
+exp_name: replica/room1
+
+# seeding: 42
+enable_vis: False
+hard_realtime: False
+
+data_specs:
+  data_path: '/mnt/dataset2/nice-slam/room1'
+  max_depth: 10

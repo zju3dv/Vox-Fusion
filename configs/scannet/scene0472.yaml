@@ -1,0 +1,11 @@
+base_config: configs/scannet/scannet.yaml
+
+exp_name: scannet/scene0472
+
+data_specs:
+  data_path: /mnt/dataset1/ScanNet/scans/scene0472_00
+  depth_scale: 1000.0
+  crop: 12
+  scale_factor: 0
+  gt_pose: False
+  max_depth: 5
