@@ -1,6 +1,6 @@
 # Vox-Fusion
 
-### [Project Page](https://xingruiy.github.io/vox-fusion/) | [Video](https://youtu.be/Prp28y1b2Qs) | Paper
+### [Project Page](https://xingruiy.github.io/vox-fusion/) | [Video](https://youtu.be/Prp28y1b2Qs) | [Paper](https://arxiv.org/abs/2210.15858)
 
 
 > Vox-Fusion: Dense Tracking and Mapping with Voxel-based Neural Implicit Representation 
