@@ -25,6 +25,13 @@ After you have installed all third party libraries, run the following script to 
 sh install.sh
 ```
 
+
+Replace the filename in mapping.py with the built library
+```python
+torch.classes.load_library("third_party/sparse_octree/build/lib.xxx/svo.xxx.so")
+```
+
+
 ## Demo
 
 It is simple to run Vox-Fusion on datasets that already have dataloaders. `src/datasets` list all existing dataloaders. You can of course build your own, we will come back to it later. For now, we use the replica dataset as an example. 

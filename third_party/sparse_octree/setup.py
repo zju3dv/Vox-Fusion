@@ -15,7 +15,7 @@ setup(
         CppExtension(
             name='svo',
             sources=_ext_sources,
-            include_dirs=["/home/lihai/sftp/nsvf_imap/third_party/sparse_octree/include"],
+            include_dirs=["./include"],
             extra_compile_args={
                 "cxx": ["-O2", "-I./include"]
             },
