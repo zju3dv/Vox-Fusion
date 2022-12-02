@@ -5,7 +5,7 @@
 
 > Vox-Fusion: Dense Tracking and Mapping with Voxel-based Neural Implicit Representation 
 > 
-> Xingrui Yang, Hai Li, Hongjia Zhai, Yuhang Ming, Yuqian Liu, Guofeng Zhang. 
+> Xingrui Yang*, Hai Li*, Hongjia Zhai, Yuhang Ming, Yuqian Liu, Guofeng Zhang. 
 > 
 > ISMAR 2022
 > 
@@ -62,7 +62,7 @@ If you find our code or paper useful, please cite
   title     = {{Vox-Fusion}: Dense Tracking and Mapping with Voxel-based Neural Implicit Representation},
   booktitle = {{IEEE} International Symposium on Mixed and Augmented Reality, {ISMAR}},
   pages     = {80--89},
-  year      = {2021},
+  year      = {2022},
 }
 ```
 
