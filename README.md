@@ -1,11 +1,11 @@
 # Vox-Fusion
 
-### [Project Page](https://xingruiy.github.io/vox-fusion/) | [Video](https://youtu.be/Prp28y1b2Qs) | [Paper](https://arxiv.org/abs/2210.15858)
+### [Project Page](https://yangxingrui.com/vox-fusion/) | [Video](https://youtu.be/Prp28y1b2Qs) | [Paper](https://arxiv.org/abs/2210.15858)
 
 
 > Vox-Fusion: Dense Tracking and Mapping with Voxel-based Neural Implicit Representation 
 > 
-> Xingrui Yang*, Hai Li*, Hongjia Zhai, Yuhang Ming, Yuqian Liu, Guofeng Zhang. 
+> [Xingrui Yang*](https://yangxingrui.com/), [Hai Li*](https://garylidd.github.io/), [Hongjia Zhai](https://zhaihongjia.github.io/), Yuhang Ming, Yuqian Liu, [Guofeng Zhang](http://www.cad.zju.edu.cn/home/gfzhang/). 
 > 
 > ISMAR 2022
 > 
@@ -57,12 +57,11 @@ Some of our codes are adapted from [Nerual RGB-D Surface Reconstruction](https:/
 If you find our code or paper useful, please cite
 
 ```bibtex
-@inproceedings{yang2022voxfusion,
-  author    = {Xingrui Yang and Hai Li and Hongjia Zhai and Yuhang Ming and Yuqian Liu and Guofeng Zhang},
-  title     = {{Vox-Fusion}: Dense Tracking and Mapping with Voxel-based Neural Implicit Representation},
-  booktitle = {{IEEE} International Symposium on Mixed and Augmented Reality, {ISMAR}},
-  pages     = {80--89},
-  year      = {2022},
+@article{yang2022vox,
+  title={Vox-Fusion: Dense Tracking and Mapping with Voxel-based Neural Implicit Representation},
+  author={Yang, Xingrui and Li, Hai and Zhai, Hongjia and Ming, Yuhang and Liu, Yuqian and Zhang, Guofeng},
+  journal={arXiv preprint arXiv:2210.15858},
+  year={2022}
 }
 ```
 
