@@ -325,7 +325,6 @@ def render_rays(
 
 def bundle_adjust_frames(
     keyframe_graph,
-    embeddings,
     map_states,
     sdf_network,
     loss_criteria,
@@ -337,22 +336,30 @@ def bundle_adjust_frames(
     max_voxel_hit=10,
     max_distance=10,
     learning_rate=[1e-2, 5e-3],
+    embed_optim=None,
+    model_optim=None,
     update_pose=True,
-    update_decoder=True
 ):
-    optimize_params = [{'params': embeddings, 'lr': learning_rate[0]}]
-    if update_decoder:
-        optimize_params += [{'params': sdf_network.parameters(),
-                             'lr': learning_rate[0]}]
+    # optimize_params = [{'params': embeddings, 'lr': learning_rate[0]}]
+    optimizers = [embed_optim]
+    if model_optim is not None:
+        # optimize_params += [{'params': sdf_network.parameters(),
+        #                      'lr': learning_rate[0]}]
+        optimizers += [model_optim]
 
+    # optimize_params=[]
     for keyframe in keyframe_graph:
         if keyframe.stamp != 0 and update_pose:
-            keyframe.pose.requires_grad_(True)
-            optimize_params += [{
-                'params': keyframe.pose.parameters(), 'lr': learning_rate[1]
-            }]
+            optimizers += [keyframe.optim]
+            # keyframe.pose.requires_grad_(True)
+            # optimize_params += [{
+            #     'params': keyframe.pose.parameters(), 'lr': learning_rate[1]
+            # }]
+    
+    # if len(optimize_params) != 0:
+    #     pose_optim = torch.optim.Adam(optimize_params)
+    #     optimizers += [pose_optim]
 
-    optim = torch.optim.Adam(optimize_params)
     for _ in range(num_iterations):
 
         rays_o = []
@@ -398,9 +405,12 @@ def bundle_adjust_frames(
         loss, _ = loss_criteria(
             final_outputs, (rgb_samples, depth_samples))
 
-        optim.zero_grad()
+        for optim in optimizers:
+            optim.zero_grad()
         loss.backward()
-        optim.step()
+
+        for optim in optimizers:
+            optim.step()
 
 
 def track_frame(
@@ -479,4 +489,4 @@ def track_frame(
         if iter == 0 and profiler is not None:
             profiler.tok("backward step")
 
-    return init_pose, hit_mask
+    return init_pose, optim, hit_mask

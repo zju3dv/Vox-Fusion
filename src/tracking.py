@@ -53,6 +53,7 @@ class Tracking:
         fid, rgb, depth, K, _ = self.data_stream[self.start_frame]
         first_frame = RGBDFrame(fid, rgb, depth, K, init_pose)
         first_frame.pose.requires_grad_(False)
+        first_frame.optim = torch.optim.Adam(first_frame.pose.parameters(), lr=1e-3)
 
         print("******* initializing first_frame:", first_frame.stamp)
         kf_buffer.put(first_frame, block=True)
@@ -104,7 +105,7 @@ class Tracking:
             map_states[k] = v.cuda()
 
         self.profiler.tick("track frame")
-        frame_pose, hit_mask = track_frame(
+        frame_pose, optim, hit_mask = track_frame(
             self.last_frame.pose,
             current_frame,
             map_states,
@@ -124,6 +125,7 @@ class Tracking:
         self.profiler.tok("track frame")
 
         current_frame.pose = frame_pose
+        current_frame.optim = optim
         current_frame.hit_ratio = hit_mask.sum() / self.N_rays
         self.last_frame = current_frame
 

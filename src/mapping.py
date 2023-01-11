@@ -68,6 +68,8 @@ class Mapping:
             requires_grad=True, dtype=torch.float32,
             device=torch.device("cuda"))
         torch.nn.init.normal_(self.embeddings, std=0.01)
+        self.embed_optim = torch.optim.Adam([self.embeddings], lr=5e-3)
+        self.model_optim = torch.optim.Adam(self.decoder.parameters(), lr=5e-3)
 
         self.svo = torch.classes.svo.Octree()
         self.svo.init(256, embed_dim, self.voxel_size)
@@ -134,8 +136,13 @@ class Mapping:
         self.logger.log_numpy_data(self.extract_voxels(), "final_voxels")
         print("******* mapping process died *******")
 
-    def do_mapping(self, share_data, tracked_frame=None,
-                   update_pose=True, update_decoder=True):
+    def do_mapping(
+            self,
+            share_data,
+            tracked_frame=None,
+            update_pose=True,
+            update_decoder=True
+    ):
         # self.map.create_voxels(self.keyframe_graph[0])
         self.decoder.train()
         optimize_targets = self.select_optimize_targets(tracked_frame)
@@ -143,7 +150,6 @@ class Mapping:
 
         bundle_adjust_frames(
             optimize_targets,
-            self.embeddings,
             self.map_states,
             self.decoder,
             self.loss_criteria,
@@ -155,8 +161,9 @@ class Mapping:
             self.max_voxel_hit,
             self.max_distance,
             learning_rate=[1e-2, 1e-3],
+            embed_optim=self.embed_optim,
+            model_optim=self.model_optim if update_decoder else None,
             update_pose=update_pose,
-            update_decoder=update_decoder
         )
 
         # optimize_targets = [f.cpu() for f in optimize_targets]

@@ -12,7 +12,7 @@ data_specs:
 
 tracker_specs:
   start_frame: 0
-  end_frame: 100
+  end_frame: -1
 
 # debug_args:
 #   save_data_freq: 1

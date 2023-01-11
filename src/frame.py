@@ -21,8 +21,10 @@ class RGBDFrame(nn.Module):
             pose[:3, 3] += 10
             pose = torch.tensor(pose, requires_grad=True, dtype=torch.float32)
             self.pose = OptimizablePose.from_matrix(pose)
+            self.optim = torch.optim.Adam(self.pose.parameters(), lr=1e-3)
         else:
             self.pose = None
+            self.optim = None
         self.precompute()
 
     def get_pose(self):
