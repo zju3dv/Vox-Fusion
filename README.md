@@ -13,7 +13,7 @@
 
 ## Installation
 
-It is recommended to install [Pytorch](https://pytorch.org/get-started/locally/) manually for your hardware platform first. You can then install all dependancies using `pip` or `conda`:
+It is recommended to install [Pytorch](https://pytorch.org/get-started/locally/) (>=1.10) manually for your hardware platform first. You can then install all dependancies using `pip` or `conda`:
 
 ```
 pip install -r requirements.txt
