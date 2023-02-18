@@ -57,11 +57,12 @@ Some of our codes are adapted from [Nerual RGB-D Surface Reconstruction](https:/
 If you find our code or paper useful, please cite
 
 ```bibtex
-@article{yang2022vox,
+@inproceedings{yang2022vox,
   title={Vox-Fusion: Dense Tracking and Mapping with Voxel-based Neural Implicit Representation},
   author={Yang, Xingrui and Li, Hai and Zhai, Hongjia and Ming, Yuhang and Liu, Yuqian and Zhang, Guofeng},
-  journal={arXiv preprint arXiv:2210.15858},
-  year={2022}
+  booktitle={2022 IEEE International Symposium on Mixed and Augmented Reality (ISMAR)},
+  pages={499--507},
+  year={2022},
 }
 ```
 
