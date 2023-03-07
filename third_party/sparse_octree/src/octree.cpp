@@ -51,7 +51,8 @@ void Octree::init(int64_t grid_dim, int64_t feat_dim, double voxel_size)
 void Octree::insert(torch::Tensor pts)
 {
     // temporal solution
-    all_pts.push_back(pts);
+    // all_pts.push_back(pts);
+    bool create_new_node = false;
 
     if (root_ == nullptr)
     {
@@ -98,6 +99,7 @@ void Octree::insert(torch::Tensor pts)
 
                     n->children_mask_ = n->children_mask_ | (1 << childid);
                     n->child(childid) = tmp;
+                    create_new_node = true;
                 }
                 else
                 {
@@ -108,6 +110,8 @@ void Octree::insert(torch::Tensor pts)
             }
         }
     }
+    if (create_new_node)
+        all_pts.push_back(pts);
 }
 
 double Octree::try_insert(torch::Tensor pts)

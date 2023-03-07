@@ -69,4 +69,4 @@ class RGBDFrame(nn.Module):
     @torch.no_grad()
     def sample_rays(self, N_rays):
         self.sample_mask = sample_rays(
-            torch.ones_like(self.depth)[None, ...], N_rays)[0, ...]
+            torch.where(self.depth > 0, torch.ones_like(self.depth)[None, ...], torch.zeros_like(self.depth)[None, ...]), N_rays)[0, ...]

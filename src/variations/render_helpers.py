@@ -193,7 +193,7 @@ def render_rays(
         truncation,
         max_voxel_hit,
         max_distance,
-        chunk_size=10000,
+        chunk_size=20000,
         profiler=None,
         return_raw=False
 ):
