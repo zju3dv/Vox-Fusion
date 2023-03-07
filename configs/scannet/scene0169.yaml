@@ -8,4 +8,28 @@ data_specs:
   crop: 6
   scale_factor: 0
   gt_pose: False
-  max_depth: 5
+  max_depth: 10
+
+tracker_specs:
+  start_frame: 0
+  end_frame: -1
+
+tracker_specs:
+  N_rays: 1024
+  learning_rate: 0.01
+  step_size: 0.05
+  keyframe_freq: 30
+  num_iterations: 30
+
+mapper_specs:
+  N_rays_each: 1024
+  voxel_size: 0.2
+  step_size: 0.05
+  num_iterations: 15
+
+criteria:
+  rgb_weight: 1
+  depth_weight: 1
+  sdf_weight: 5000.0
+  fs_weight: 10.0
+  sdf_truncation: 0.02
