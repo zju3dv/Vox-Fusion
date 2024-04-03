@@ -16,7 +16,9 @@ We found a bug in the evaluation script which affected the estimated pose accura
 <img width="856" alt="table1" src="https://github.com/zju3dv/Vox-Fusion/assets/48756786/d6ad3115-786a-4dc3-b6d7-14b46b5da976">
 <img width="445" alt="table3" src="https://github.com/zju3dv/Vox-Fusion/assets/48756786/df18a2cb-b37f-417e-9228-b4e3358034b7">
 </p>
-  
+
+Please use the config file replica_all.yaml and scannet_all.yaml in the **Google Drive** to replicate the results from the paper !!!
+
 ## Installation
 
 It is recommended to install [Pytorch](https://pytorch.org/get-started/locally/) (>=1.10) manually for your hardware platform first. You can then install all dependancies using `pip` or `conda`:
