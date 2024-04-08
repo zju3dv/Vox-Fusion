@@ -1,13 +1,13 @@
 base_config: configs/replica/replica.yaml
 
-exp_name: replica/room1
+exp_name: replica/room0
 
 # seeding: 42
 enable_vis: False
 hard_realtime: False
 
 data_specs:
-  data_path: '/mnt/dataset2/nice-slam/room1'
+  data_path: '/mnt/nas_8/datasets/voxslam/Replica/room0'
   max_depth: 10
 
 tracker_specs:
@@ -15,17 +15,17 @@ tracker_specs:
   end_frame: -1
 
 tracker_specs:
-  N_rays: 1024
+  N_rays: 2048
   learning_rate: 0.01
   step_size: 0.05
   keyframe_freq: 10
-  num_iterations: 30
+  num_iterations: 50
 
 mapper_specs:
-  N_rays_each: 1024
+  N_rays_each: 2048
   voxel_size: 0.2
   step_size: 0.05
-  num_iterations: 15
+  num_iterations: 20
 
 criteria:
   rgb_weight: .5
