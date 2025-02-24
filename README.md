@@ -19,6 +19,16 @@ We found a bug in the evaluation script which affected the estimated pose accura
 
 Please use the config file replica_all.yaml and scannet_all.yaml in the **Google Drive** to replicate the results from the paper !!!
 
+## Performance on TUM-RGBD
+We provide the results on the TUM-RGBD dataset.
+
+|     Metrics      | fr1/desk | fr1/desk2 | fr1/room |fr2/xyz | fr3/office | 
+|:----------------:|:-------------:|:--------------:|:--------------:|:-----------------------:|:---------------------:|
+|       ATE RMSE [cm]       |     2.54      |      3.95      |      12.51      |          1.40           |        -         |
+|       ATE Mean [cm]       |     2.26      |      3.18      |      11.63      |          1.19           |        -         |
+|      ATE Median [cm]      |     2.11      |      2.64      |      10.54      |          0.95           |        -         |
+
+
 ## Installation
 
 It is recommended to install [Pytorch](https://pytorch.org/get-started/locally/) (>=1.10) manually for your hardware platform first. You can then install all dependancies using `pip` or `conda`:
