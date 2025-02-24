@@ -10,14 +10,19 @@
 > ISMAR 2022
 
 ## Correction
+
+
 We found a bug in the evaluation script which affected the estimated pose accuracy in Tables 1 and 3 in the original paper. We have corrected this problem and re-run the results with updated configurations. The corrected results are comparable (even better for Replica dataset) to the originally reported results in the paper, which do not affect the contribution and conclusion of our work. We have updated the [arxiv version](https://arxiv.org/abs/2210.15858) of our paper and publish all the latest results (including mesh, pose, gt, eval scripts and training configs) on [Google Drive](https://drive.google.com/drive/folders/15bwoX44uh1YCsMT4F3Td9n1h2qiUOuVG?usp=share_link), in case anyone wants to reproduce our results and compare them using different metrics.
 
 <p align="center">
 <img width="856" alt="table1" src="https://github.com/zju3dv/Vox-Fusion/assets/48756786/d6ad3115-786a-4dc3-b6d7-14b46b5da976">
+<img width="856" alt="table2" src="https://github.com/user-attachments/assets/9c886887-d769-40fe-82cf-4d05510d187c">
 <img width="445" alt="table3" src="https://github.com/zju3dv/Vox-Fusion/assets/48756786/df18a2cb-b37f-417e-9228-b4e3358034b7">
 </p>
 
 Please use the config file replica_all.yaml and scannet_all.yaml in the **Google Drive** to replicate the results from the paper !!!
+
+**If you want to compare our method, please use the data or config file we provide to run.**
 
 ## Performance on TUM-RGBD
 We provide the results on the TUM-RGBD dataset.
